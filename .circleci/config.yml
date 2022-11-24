@@ -64,6 +64,8 @@ jobs:
           path: test-results
 
   deploy:
+    docker:
+      - image: node:current-slim
     steps:
       - run:
           name: Run Deploy
@@ -82,6 +84,6 @@ workflows:
           requires:
             - build
             - unit-tests
-          filters:
-            branches:
-              only: develop 
+          # filters:
+          #   branches:
+          #     only: develop 
