@@ -82,3 +82,6 @@ workflows:
           requires:
             - build
             - unit-tests
+          filters:
+            branches:
+              only: develop 
