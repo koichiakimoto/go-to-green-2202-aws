@@ -63,6 +63,11 @@ jobs:
       - store_test_results:
           path: test-results
 
+  deploy:
+    steps:
+      - run:
+          name: Run Deploy
+          command: echo deploy
 workflows:
   run:
     jobs:
@@ -73,3 +78,7 @@ workflows:
       - unit-tests:
           requires:
             - prepare-dependencies
+      - deploy:
+          requires:
+            - build
+            - unit-tests
