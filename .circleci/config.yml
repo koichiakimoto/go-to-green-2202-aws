@@ -32,6 +32,9 @@ jobs:
             fi
 
             yarn build
+      - run:
+          name: show wnv
+          command: echo $TEST_ENV
       - store_artifacts:
           path: dist/server.js
       - store_artifacts:
